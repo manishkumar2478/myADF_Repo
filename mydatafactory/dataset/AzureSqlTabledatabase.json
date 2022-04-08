@@ -1,0 +1,74 @@
+{
+	"name": "AzureSqlTabledatabase",
+	"properties": {
+		"description": "table name LTC_CLAIM",
+		"linkedServiceName": {
+			"referenceName": "linkedServiceAzureSQL",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "PRNT_CONTRACT_NUM",
+				"type": "nvarchar"
+			},
+			{
+				"name": "DOS",
+				"type": "nvarchar"
+			},
+			{
+				"name": "MA_NUM",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CARRIER_CD",
+				"type": "nvarchar"
+			},
+			{
+				"name": "POLICY_NUM",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CARRIER_NAME",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CLAIM_FORM_CD",
+				"type": "nvarchar"
+			},
+			{
+				"name": "BASE_ICN_NUM",
+				"type": "nvarchar"
+			},
+			{
+				"name": "LINE_NBR",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CLAIM_TYPE_CD",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CONTRACT_NUM",
+				"type": "nvarchar"
+			},
+			{
+				"name": "MA_PAID_AMT",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PROVIDER_ID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "RESUBMISSION_IND",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "LTC_CLAIM"
+		}
+	}
+}
