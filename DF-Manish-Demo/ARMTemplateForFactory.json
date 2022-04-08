@@ -1,0 +1,112 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "DF-Manish-Demo"
+		},
+		"linkedServiceAzureSQL_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'linkedServiceAzureSQL'"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlTabledatabase')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"description": "table name LTC_CLAIM",
+				"linkedServiceName": {
+					"referenceName": "linkedServiceAzureSQL",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "PRNT_CONTRACT_NUM",
+						"type": "nvarchar"
+					},
+					{
+						"name": "DOS",
+						"type": "nvarchar"
+					},
+					{
+						"name": "MA_NUM",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CARRIER_CD",
+						"type": "nvarchar"
+					},
+					{
+						"name": "POLICY_NUM",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CARRIER_NAME",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CLAIM_FORM_CD",
+						"type": "nvarchar"
+					},
+					{
+						"name": "BASE_ICN_NUM",
+						"type": "nvarchar"
+					},
+					{
+						"name": "LINE_NBR",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CLAIM_TYPE_CD",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CONTRACT_NUM",
+						"type": "nvarchar"
+					},
+					{
+						"name": "MA_PAID_AMT",
+						"type": "nvarchar"
+					},
+					{
+						"name": "PROVIDER_ID",
+						"type": "nvarchar"
+					},
+					{
+						"name": "RESUBMISSION_IND",
+						"type": "nvarchar"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "LTC_CLAIM"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/linkedServiceAzureSQL')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/linkedServiceAzureSQL')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"connectionString": "[parameters('linkedServiceAzureSQL_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
