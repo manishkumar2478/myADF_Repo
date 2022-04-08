@@ -5,6 +5,9 @@
 		"factoryName": {
 			"value": "DF-Manish-Demo"
 		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
 		"linkedServiceAzureSQL_connectionString": {
 			"value": ""
 		},
