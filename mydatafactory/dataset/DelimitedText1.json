@@ -1,0 +1,79 @@
+{
+	"name": "DelimitedText1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "input"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "PRNT_CONTRACT_NUM",
+				"type": "String"
+			},
+			{
+				"name": "DOS",
+				"type": "String"
+			},
+			{
+				"name": "MA_NUM",
+				"type": "String"
+			},
+			{
+				"name": "CARRIER_CD",
+				"type": "String"
+			},
+			{
+				"name": "POLICY_NUM",
+				"type": "String"
+			},
+			{
+				"name": "CARRIER_NAME",
+				"type": "String"
+			},
+			{
+				"name": "CLAIM_FORM_CD",
+				"type": "String"
+			},
+			{
+				"name": "BASE_ICN_NUM",
+				"type": "String"
+			},
+			{
+				"name": "LINE_NBR",
+				"type": "String"
+			},
+			{
+				"name": "CLAIM_TYPE_CD",
+				"type": "String"
+			},
+			{
+				"name": "CONTRACT_NUM",
+				"type": "String"
+			},
+			{
+				"name": "MA_PAID_AMT",
+				"type": "String"
+			},
+			{
+				"name": "PROVIDER_ID",
+				"type": "String"
+			},
+			{
+				"name": "RESUBMISSION_IND",
+				"type": "String"
+			}
+		]
+	}
+}
